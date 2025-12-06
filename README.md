@@ -1,96 +1,115 @@
-🚀 Flask Application Deployment Using Docker on AWS EC2
+# 🚀 Flask Application Deployment using Docker on AWS EC2
 
-This project is a Python Flask web application that is fully containerized using Docker and can be easily deployed on an AWS EC2 instance.
-It demonstrates real-world DevOps practices such as containerization, image building, and server deployment using Docker.
+This project is a **Python Flask web application** that is fully **containerized using Docker** and deployed on **AWS EC2**.  
+It demonstrates a real-world **DevOps workflow** including **Docker image building, container management, and cloud deployment**.
 
-This setup is ideal for:
+---
 
-DevOps learners 👨‍💻
+## 📌 Project Highlights
 
-Cloud beginners ☁️
+- ✅ Flask-based Python web application  
+- ✅ Docker containerization  
+- ✅ Deployment on AWS EC2  
+- ✅ Multi-stage Docker build support  
+- ✅ DevOps-ready structure  
+- ✅ Ideal for students & DevOps beginners  
 
-Students preparing for interviews 🎯
+---
 
-📁 What’s Inside This Project?
+## 📁 Project Structure
 
-✅ app.py → Main Flask application code
+app.py → Main Flask application
+run.py → Application entry point
+requirements.txt → Python dependencies
+Dockerfile → Docker build file
+Dockerfile-multi → Multi-stage Docker file
+README.md → Project documentation
 
-✅ run.py → Entry point to start the Flask server
+yaml
+Copy code
 
-✅ requirements.txt → Python dependencies
+---
 
-✅ Dockerfile → Used to build the Docker image
+## 🛠️ Technologies Used
 
-✅ Dockerfile-multi → Multi-stage Docker build file
+- **Python**
+- **Flask**
+- **Docker**
+- **AWS EC2**
+- **Linux (Ubuntu)**
 
-✅ Deployed & executed using Docker on AWS EC2
+---
 
-🐳 AWS EC2 + Docker Deployment Commands
+# 🐳 Docker + AWS EC2 Deployment Guide
 
-Follow these exact steps to deploy the project on an EC2 Ubuntu server 👇
+Follow these steps to run this project on an AWS EC2 instance.
 
-🛠️ Step 1: Install Docker on EC2
+---
+
+## 🔧 Step 1: Install Docker on EC2
+
+```bash
 sudo apt update
 sudo apt install -y docker.io
 sudo systemctl start docker
 sudo systemctl enable docker
 sudo usermod -aG docker $USER
 newgrp docker
-
-
-🔹 Installs Docker and allows you to run it without sudo.
-
-📥 Step 2: Clone Your GitHub Project
+📥 Step 2: Clone the GitHub Repository
+bash
+Copy code
 git clone <YOUR_GITHUB_REPO_URL>
 cd <YOUR_PROJECT_FOLDER>
+🧱 Step 3: Build Docker Image
+Using the default Dockerfile:
 
-
-📂 Downloads your project into the EC2 server.
-
-🧱 Step 3: Build the Docker Image
-
-Using normal Dockerfile:
-
+bash
+Copy code
 docker build -t flask-app .
+Using the multi-stage Dockerfile:
 
-
-Using multi-stage Dockerfile:
-
+bash
+Copy code
 docker build -f Dockerfile-multi -t flask-app .
-
-
-🐳 Creates a Docker image of your Flask application.
-
-🚀 Step 4: Run the Docker Container
+🚀 Step 4: Run Docker Container
+bash
+Copy code
 docker run -d -p 80:5000 --name flask-container flask-app
+🌍 Open in browser:
 
-
-🌍 Access your live app in the browser:
-
+cpp
+Copy code
 http://<EC2-PUBLIC-IP>
-
-✅ Step 5: Check Running Containers
+✅ Step 5: Check Running Container
+bash
+Copy code
 docker ps
-
-
-👀 Shows currently running containers.
-
-📜 Step 6: View Container Logs
+📜 Step 6: View Application Logs
+bash
+Copy code
 docker logs -f flask-container
-
-
-🧾 Useful for debugging and monitoring.
-
-🔄 Step 7: Stop, Start & Remove Containers
+🔄 Step 7: Container Management
+bash
+Copy code
 docker stop flask-container
 docker start flask-container
 docker rm flask-container
-
-
-⚙️ Full container lifecycle control.
-
-🗑️ Step 8: Remove Docker Image (If Needed)
+🗑️ Step 8: Remove Docker Image (Optional)
+bash
+Copy code
 docker rmi flask-app
+✅ Final Output
+Your Flask application is now successfully running on AWS EC2 using Docker ☁️🐳
+This project proves your knowledge of:
 
+✔️ Docker Image Creation
 
-🧹 Helps keep your server clean.
+✔️ Docker Container Management
+
+✔️ AWS EC2 Deployment
+
+✔️ Basic DevOps Workflow
+
+🙌 Author
+Developed by: Your Name
+Role: Python Developer | DevOps Enthusiast
