@@ -86,13 +86,13 @@ docker build -f Dockerfile-multi -t flask-app .
 ## 🚀 Step 4: Run Docker Container
 
 ```bash
-docker run -d -p 80:5000 --name flask-container flask-app
+docker run -d -p 5000:5000 --name flask-container flask-app
 ```
 
 🌍 Open in browser:
 
 ```
-http://<EC2-PUBLIC-IP>
+http://<EC2-PUBLIC-IP>:5000
 ```
 
 ---
